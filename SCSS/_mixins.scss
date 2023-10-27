@@ -1,0 +1,25 @@
+/*** mixin ***/
+
+@mixin btn-main {
+    border-radius: 25px;
+    padding: 15px 19px;
+    font-family: "Roboto-regular";
+    font-size: 16px;
+    color: white;
+    border: 0px;
+    text-decoration: none;
+    background: linear-gradient(359deg, #9356DC -11.44%, #FF79DA 123.93%);
+    box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.25));
+    transition: 300ms;
+}
+
+@mixin btn-main-hover {
+    opacity: 90%;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.35));
+}
+
+@mixin cards {
+    background-color: white;
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.10);
+}

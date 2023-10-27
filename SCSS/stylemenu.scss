@@ -1,16 +1,18 @@
-@use "variables";
-@use "fonts";
-@use "mixins";
-@use "keyframes";
+@use "_variables";
+@use "_fonts";
+@use "_mixins";
+@use "_keyframes";
 
-
-
-
-/***    Général    ***/
+/**    Général    **/
 
 * {
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
+    vertical-align: baseline;
 }
 
 body {
@@ -21,7 +23,6 @@ body {
 
     }
 }
-
 
 h1 {
     font-family: 'Shrikhand';
@@ -48,45 +49,34 @@ h2 {
 h3 {
     font-family: 'Roboto';
     font-size: 18px;
-    margin: 0;
-
-}
-
-ul {
-    padding: 0;
 }
 
 li {
     list-style-type: none;
 }
 
-
-
-
 /***    HEADER   ***/
-
-
 header {
     height: 63px;
-    background-color: white;
-    display: flex;
-    align-items: center;
+    background-color: variables.$white;
 
     .logo {
         width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
 
         .link-back {
+            position: relative;
             display: inline-block;
-            padding-left: 23px;
+            padding: 0px 23px 0px 23px;
             text-decoration: none;
             color: variables.$black-grey;
-            position: relative;
             z-index: 1;
         }
 
         .logo-img {
             position: absolute;
-            top: 19px;
             display: flex;
             justify-content: center;
             width: 100%;
@@ -99,13 +89,8 @@ header {
     }
 }
 
-
-/*** Section menu ***/
-
-
-
+/** Section menu **/
 main {
-
     .menu-image {
         width: 100%;
         height: 275px;
@@ -120,64 +105,26 @@ main {
         gap: 40px;
         margin-top: -55px;
         background-color: variables.$backgroundcolor;
-        border-radius: 27px 27px 0 0;
+        border-radius: 25px 25px 0 0;
 
         @media screen and (min-width:1024px) {
             margin-right: 96px;
             margin-left: 96px;
-
         }
 
         @media screen and (min-width:1440px) {
             margin-right: 192px;
             margin-left: 192px;
             padding: 0 210px 0 210px;
-
-
         }
 
         &__title {
-            display: flex;
-            flex-direction: row;
-            align-items: baseline;
             width: 100%;
-            gap: 24px;
+            margin-bottom: 24px;
 
             @media screen and (min-width:1440px) {
+                display: flex;
                 justify-content: center;
-
-            }
-
-            .heart2 {
-
-                .anim {
-                    width: 21px;
-                    overflow: visible;
-                    cursor: pointer;
-                }
-
-                .anim path {
-                    fill: url(#myGradient);
-                    stroke: black;
-                    stroke-width: 45px;
-                }
-
-                .anim stop {
-                    transition: all 0.25s ease-in-out;
-                }
-
-                .anim path:hover {
-                    stroke: transparent;
-                    transition: all 0.25s ease-in-out;
-                }
-
-                .anim:hover #myGradient stop:first-child {
-                    stop-color: #9356DC;
-                }
-
-                .anim:hover #myGradient stop:last-child {
-                    stop-color: #FF79DA;
-                }
             }
         }
 
@@ -190,8 +137,6 @@ main {
             gap: 12px;
             padding: 0 13px 0 13px;
             margin: 0;
-
-
 
             .card-list {
                 display: flex;
@@ -213,16 +158,12 @@ main {
 
                         .right-content .card__click {
                             background-color: variables.$green-light;
-                            width: 59px;
+                            width: 60px;
                             opacity: 1;
-
-                            i {
-                                transform: rotate(359deg);
-                            }
                         }
                     }
 
-                    .texts-wrapper {
+                    .text-content {
                         display: flex;
                         flex-direction: column;
                         gap: 5px;
@@ -234,8 +175,8 @@ main {
                             text-overflow: ellipsis;
                         }
 
-                        .note {
-                            font-family: 'Roboto-light';
+                        .description {
+                            font-family: "Roboto-light";
                             font-size: 15px;
                             margin: 0;
                             white-space: nowrap;
@@ -246,29 +187,27 @@ main {
 
                     .right-content {
                         display: flex;
-                        flex-direction: row;
                         align-items: flex-end;
                         padding-left: 15px;
 
                         .price {
                             color: variables.$black-grey;
-                            font-family: 'Roboto-bold';
+                            font-family: "Roboto-bold";
                             font-size: 15px;
                             margin: 0;
                         }
 
                         .card__click {
+                            position: absolute;
                             display: flex;
-                            flex-direction: row;
                             justify-content: center;
                             align-items: center;
-                            position: absolute;
                             top: 0;
                             right: 0;
                             font-size: 20px;
                             width: 0;
                             height: 100%;
-                            transition: 0.5s;
+                            transition: 0.25s;
                             border-radius: 0 15px 15px 0;
                             background-color: variables.$white;
                             opacity: 0;
@@ -276,7 +215,7 @@ main {
                             i {
                                 color: variables.$white;
                                 display: inline-block;
-                                transition: 0.5s ease-in-out;
+                                transition: 0.25s ease-in-out;
                                 transform: rotate(0deg);
                             }
                         }
@@ -286,19 +225,19 @@ main {
         }
     }
 
-    .btn__cta {
-        @include mixins.btn-cta;
+    .btn__main {
+        @include mixins.btn-main;
         border-width: 0;
         width: 186px;
         margin-bottom: 40px;
 
         &:hover {
-            @include mixins.btn-cta-hoover;
+            @include mixins.btn-main-hover;
         }
     }
 }
 
-/***     Animation Menu content "apparition entrée plat dessert"   ***/
+/**     Animation Menu content "apparition entrée plat dessert"   **/
 
 .starter {
     animation: 1000ms ease-in-out 0.25s 1 normal backwards running menu-content;
@@ -311,8 +250,6 @@ main {
 .dessert {
     animation: 1000ms ease-in-out 0.75s 1 normal backwards running menu-content;
 }
-
-
 
 /*** Footer ***/
 
