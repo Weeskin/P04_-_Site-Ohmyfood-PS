@@ -285,33 +285,38 @@ main .btn__main:hover {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.35));
 }
 
-/**     Animation Menu content "apparition entrée plat dessert"   **/
+/** Animations entrées - plats - desserts  **/
 .starter {
-  animation: 1000ms ease-in-out 0.25s 1 normal backwards running menu-content;
+  animation: 1000ms ease-in-out 0.4s 1 normal backwards running menu-content;
 }
 
 .dish {
-  animation: 1000ms ease-in-out 0.5s 1 normal backwards running menu-content;
+  animation: 1000ms ease-in-out 0.85s 1 normal backwards running menu-content;
 }
 
 .dessert {
-  animation: 1000ms ease-in-out 0.75s 1 normal backwards running menu-content;
+  animation: 1000ms ease-in-out 1.15s 1 normal backwards running menu-content;
 }
 
-/*** Footer ***/
+.anim_button {
+  animation: 1000ms ease-in-out 1.3s 1 normal backwards running menu-content;
+}
+
+/** Footer **/
 footer {
   display: flex;
   flex-direction: column;
   background-color: #353535;
   color: #FFF;
   padding: 22px 25px 22px 25px;
-  gap: 16px;
+  margin-top: 60px;
 }
 @media screen and (min-width: 767px) {
   footer {
     flex-direction: row-reverse;
     align-items: flex-end;
     padding: 25px 30px 25px 30px;
+    margin-top: 30px;
   }
 }
 footer h3 {
@@ -319,6 +324,11 @@ footer h3 {
   font-family: "Shrikhand", cursive;
   font-size: 18px;
   margin: 0;
+}
+@media screen and (min-width: 767px) {
+  footer h3 {
+    margin-left: 16px;
+  }
 }
 footer ul {
   display: flex;
@@ -347,16 +357,16 @@ footer ul li a {
   text-decoration: none;
   color: #FFF;
 }
-footer ul .ico-ustensils {
+footer ul .ico-tools {
   font-family: "Roboto";
 }
 @media screen and (min-width: 767px) {
-  footer ul .ico-ustensils {
+  footer ul .ico-tools {
     min-width: 16%;
   }
 }
-footer ul .ico-ustensils::before {
-  font-family: "Font-awesome-solid";
+footer ul .ico-tools::before {
+  font-family: "Font-Solid";
   content: "\f2e7";
   padding-right: 10px;
   font-size: 15px;
@@ -370,7 +380,7 @@ footer ul .ico-handshake-angle {
   }
 }
 footer ul .ico-handshake-angle::before {
-  font-family: "Font-awesome-solid";
+  font-family: "Font-Solid";
   content: "\f4c4";
   padding-right: 10px;
   font-size: 11px;

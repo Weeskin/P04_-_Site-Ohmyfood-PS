@@ -20,7 +20,6 @@ body {
 
     @media screen and (min-width:1024px) {
         background-color: variables.$white;
-
     }
 }
 
@@ -127,8 +126,6 @@ main {
                 justify-content: center;
             }
         }
-
-
 
         .menu-content {
             display: flex;
@@ -237,21 +234,25 @@ main {
     }
 }
 
-/**     Animation Menu content "apparition entrée plat dessert"   **/
+/** Animations entrées - plats - desserts  **/
 
 .starter {
-    animation: 1000ms ease-in-out 0.25s 1 normal backwards running menu-content;
+    animation: 1000ms ease-in-out 0.40s 1 normal backwards running menu-content;
 }
 
 .dish {
-    animation: 1000ms ease-in-out 0.50s 1 normal backwards running menu-content;
+    animation: 1000ms ease-in-out 0.85s 1 normal backwards running menu-content;
 }
 
 .dessert {
-    animation: 1000ms ease-in-out 0.75s 1 normal backwards running menu-content;
+    animation: 1000ms ease-in-out 1.15s 1 normal backwards running menu-content;
 }
 
-/*** Footer ***/
+.anim_button {
+    animation: 1000ms ease-in-out 1.30s 1 normal backwards running menu-content;
+}
+
+/** Footer **/
 
 footer {
     display: flex;
@@ -259,26 +260,30 @@ footer {
     background-color: variables.$black-grey;
     color: variables.$white;
     padding: 22px 25px 22px 25px;
-    gap: 16px;
+    margin-top: 60px;
 
     @media screen and (min-width:767px) {
         flex-direction: row-reverse;
         align-items: flex-end;
         padding: 25px 30px 25px 30px;
+        margin-top: 30px;
     }
 
     h3 {
         color: variables.$white;
-        font-family: 'Shrikhand', cursive;
+        font-family: "Shrikhand", cursive;
         font-size: 18px;
         margin: 0;
+
+        @media screen and (min-width:767px) {
+            margin-left: 16px;
+        }
     }
 
     ul {
         display: flex;
         flex-direction: column;
-        font-family: 'Roboto-light';
-        padding: 0;
+        font-family: "Roboto-light";
         gap: 8px;
 
         @media screen and (min-width:767px) {
@@ -290,48 +295,42 @@ footer {
 
         li {
             list-style-type: none;
+            color: variables.$white;
 
             @media screen and (min-width:767px) {
                 min-width: 11%;
             }
-
-            a {
-                text-decoration: none;
-                color: variables.$white;
-            }
         }
 
-        .ico-ustensils {
-            font-family: 'Roboto';
+        .ico-tools {
+            font-family: "Roboto";
 
             @media screen and (min-width:767px) {
                 min-width: 16%;
 
             }
-        }
 
-        .ico-ustensils::before {
-            font-family: 'Font-awesome-solid';
-            content: "\f2e7";
-            padding-right: 10px;
-            font-size: 15px;
+            &::before {
+                content: "\f2e7";
+                font-family: "Font-Solid";
+                padding-right: 10px;
+                font-size: 15px;
+            }
         }
 
         .ico-handshake-angle {
-            font-family: 'Roboto';
+            font-family: "Roboto";
 
             @media screen and (min-width:767px) {
                 min-width: 16%;
+            }
 
+            &::before {
+                font-family: "Font-Solid";
+                content: "\f4c4";
+                padding-right: 10px;
+                font-size: 11px;
             }
         }
 
-        .ico-handshake-angle::before {
-            font-family: 'Font-awesome-solid';
-            content: "\f4c4";
-            padding-right: 10px;
-            font-size: 11px;
-        }
     }
-
-}

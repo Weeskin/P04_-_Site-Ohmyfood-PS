@@ -1,4 +1,3 @@
-
 @keyframes menu-content {
     from {
         opacity: 0;
@@ -10,25 +9,23 @@
         transform: translateX(0);
         opacity: 1;
     }
-
-
 }
 
 @keyframes fadeout {
 
-0%{
-    opacity: 1;
+    0% {
+        opacity: 1;
 
-}
+    }
 
-70%{
-    opacity: 1;
-    background-color: white;
-}
+    70% {
+        opacity: 1;
+        background-color: white;
+    }
 
-100%{
-    opacity: 0;
-    background-color: transparent;
-    pointer-events: none;
-}
+    100% {
+        opacity: 0;
+        background-color: transparent;
+        pointer-events: none;
+    }
 }

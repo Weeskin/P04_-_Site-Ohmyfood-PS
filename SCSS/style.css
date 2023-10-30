@@ -350,7 +350,7 @@ header .localisation i {
   margin-top: 0;
 }
 
-/*** Footer ***/
+/** Footer **/
 footer {
   display: flex;
   flex-direction: column;
