@@ -24,14 +24,14 @@ body {
 }
 
 h1 {
-    font-family: 'Shrikhand';
+    font-family: "Shrikhand";
     font-size: 28px;
     margin: 32px 0px 0px 15px;
     font-weight: 400;
 }
 
 h2 {
-    font-family: 'Roboto-light';
+    font-family: "Roboto-light";
     font-size: 16px;
     font-weight: lighter;
 
@@ -120,10 +120,37 @@ main {
         &__title {
             width: 100%;
             margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            position: relative;
 
             @media screen and (min-width:1440px) {
                 display: flex;
                 justify-content: center;
+            }
+
+            .card-heart {
+
+                i {
+                    position: absolute;
+                    font-size: 20px;
+                    top: 55%;
+                    right: 10%;
+                }
+
+                .fa-solid {
+                    opacity: 0;
+
+                    &:hover {
+                        opacity: 1;
+                        color: transparent;
+                        background-clip: text;
+                        --webkit-background-clip: text;
+                        transition: all 0.4s ease-in-out;
+                        background-image: variables.$button-background;
+                        overflow: hidden;
+                    }
+                }
             }
         }
 
@@ -222,16 +249,16 @@ main {
         }
     }
 
-    .btn__main {
+    button {
+        display: inline-block;
         @include mixins.btn-main;
-        border-width: 0;
         width: 186px;
-        margin-bottom: 40px;
 
         &:hover {
             @include mixins.btn-main-hover;
         }
     }
+
 }
 
 /** Animations entrées - plats - desserts  **/
@@ -295,10 +322,14 @@ footer {
 
         li {
             list-style-type: none;
-            color: variables.$white;
 
             @media screen and (min-width:767px) {
                 min-width: 11%;
+            }
+
+            a {
+                text-decoration: none;
+                color: variables.$white;
             }
         }
 
@@ -329,8 +360,8 @@ footer {
                 font-family: "Font-Solid";
                 content: "\f4c4";
                 padding-right: 10px;
-                font-size: 11px;
+                font-size: 15px;
             }
         }
-
     }
+}

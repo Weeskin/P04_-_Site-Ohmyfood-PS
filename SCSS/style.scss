@@ -33,21 +33,39 @@ h2 {
 /** Loader **/
 
 .loader {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     z-index: 2;
     background-color: variables.$white;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: opacity 1s ease-in-out;
     animation: fadeout 2700ms forwards;
 
-    i {
-        color: variables.$first-color;
+    .dot {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin: 0 15px;
+        animation: loader infinite 0.3s alternate;
+        background: variables.$white;
+        background-color: variables.$first-color;
     }
+
+    .d2 {
+        animation-delay: 0.05s;
+        background-color: variables.$second-color;
+    }
+
+    .d3 {
+        animation-delay: 0.1s;
+        background-color: variables.$green-light;
+    }
+
 }
 
 
@@ -176,7 +194,6 @@ header {
             &::before {
                 display: inline-block;
                 position: absolute;
-                content: "1";
                 background-color: variables.$first-color;
                 color: variables.$white;
                 line-height: 24px;
@@ -185,6 +202,7 @@ header {
                 width: 24px;
                 text-align: center;
                 left: -12px;
+                content: "1";
             }
 
             &:nth-child(2)::before {
@@ -266,7 +284,6 @@ header {
             }
 
             .card-first-section {
-                text-decoration: none;
                 display: inline-block;
                 position: relative;
                 width: 100%;
@@ -301,20 +318,43 @@ header {
                 justify-content: space-between;
                 color: variables.$black;
                 padding: 0 0 16px 16px;
+                position: relative;
 
-                a {
-                    color: variables.$black;
-                }
-
-                h3 {
+                .card-title {
                     font-family: "Roboto-bold";
                     margin: 16px 0 8px 0;
                 }
 
-                p {
+                .card-subtitle {
                     font-family: "Roboto-light";
                     font-size: 17px;
                     margin-top: 0;
+                }
+
+                /** Animation du coeur **/
+                .card-heart {
+
+
+                    i {
+                        position: absolute;
+                        font-size: 20px;
+                        margin: 30px 10px 8px 0;
+                        right: 10%;
+                    }
+
+                    .fa-solid {
+                        opacity: 0;
+
+                        &:hover {
+                            opacity: 1;
+                            color: transparent;
+                            background-clip: text;
+                            --webkit-background-clip: text;
+                            transition: all 0.4s ease-in-out;
+                            background-image: variables.$button-background;
+                            overflow: hidden;
+                        }
+                    }
                 }
             }
         }
@@ -322,7 +362,6 @@ header {
 }
 
 /** Footer **/
-
 footer {
     display: flex;
     flex-direction: column;
@@ -364,10 +403,14 @@ footer {
 
         li {
             list-style-type: none;
-            color: variables.$white;
 
             @media screen and (min-width:767px) {
                 min-width: 11%;
+            }
+
+            a {
+                text-decoration: none;
+                color: variables.$white;
             }
         }
 
@@ -398,7 +441,8 @@ footer {
                 font-family: "Font-Solid";
                 content: "\f4c4";
                 padding-right: 10px;
-                font-size: 11px;
+                font-size: 15px;
             }
         }
     }
+}

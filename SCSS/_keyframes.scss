@@ -29,3 +29,9 @@
         pointer-events: none;
     }
 }
+
+@keyframes loader {
+    100% {
+        transform: translateY(-60px);
+    }
+}
