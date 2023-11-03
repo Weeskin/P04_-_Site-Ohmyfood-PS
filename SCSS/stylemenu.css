@@ -205,7 +205,6 @@ main .menu__title {
   margin-bottom: 24px;
   display: flex;
   align-items: center;
-  position: relative;
 }
 @media screen and (min-width: 1440px) {
   main .menu__title {
@@ -213,11 +212,20 @@ main .menu__title {
     justify-content: center;
   }
 }
+main .menu__title .card-heart {
+  width: 20%;
+  height: 100%;
+}
 main .menu__title .card-heart i {
   position: absolute;
   font-size: 20px;
-  top: 55%;
-  right: 10%;
+  top: 42px;
+  left: 310px;
+}
+@media screen and (min-width: 1440px) {
+  main .menu__title .card-heart i {
+    left: 58%;
+  }
 }
 main .menu__title .card-heart .fa-solid {
   opacity: 0;
