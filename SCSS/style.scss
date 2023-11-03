@@ -33,39 +33,74 @@ h2 {
 /** Loader **/
 
 .loader {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     z-index: 2;
     background-color: variables.$white;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: opacity 1s ease-in-out;
     animation: fadeout 2700ms forwards;
 
-    .dot {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        margin: 0 15px;
-        animation: loader infinite 0.3s alternate;
-        background: variables.$white;
-        background-color: variables.$first-color;
-    }
+    .wrapper {
+        width: 400px;
+        height: 120px;
+        position: relative;
+        z-index: 3;
 
-    .d2 {
-        animation-delay: 0.05s;
-        background-color: variables.$second-color;
-    }
+        .circle {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            border-radius: 50%;
+            background-color: variables.$first-color;
+            left: 15%;
+            transform-origin: 50%;
+            animation: circle_loader .5s alternate infinite ease;
+        }
 
-    .d3 {
-        animation-delay: 0.1s;
-        background-color: variables.$green-light;
-    }
+        .circle:nth-child(2) {
+            background-color: variables.$second-color;
+            left: 45%;
+            animation-delay: .2s;
+        }
 
+        .circle:nth-child(3) {
+            background-color: variables.$green-light;
+            left: auto;
+            right: 15%;
+            animation-delay: .3s;
+        }
+
+        .shadow {
+            width: 50px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.9);
+            position: absolute;
+            top: 62px;
+            transform-origin: 50%;
+            z-index: -1;
+            left: 15%;
+            filter: blur(1px);
+            animation: shadow_loader .5s alternate infinite ease;
+        }
+
+        .shadow:nth-child(4) {
+            left: 45%;
+            animation-delay: .2s
+        }
+
+        .shadow:nth-child(5) {
+            left: auto;
+            right: 15%;
+            animation-delay: .3s;
+        }
+
+    }
 }
 
 
@@ -153,7 +188,7 @@ header {
     background-color: variables.$white;
     display: flex;
     flex-direction: column;
-    padding: 48px 0 68px 0;
+    padding: 48px 0 68px 10px;
 
     @media screen and (min-width:1024px) {
         padding: 50px 50px;
@@ -319,6 +354,11 @@ header {
                 color: variables.$black;
                 padding: 0 0 16px 16px;
                 position: relative;
+
+                a {
+                    text-decoration: none;
+                    color: variables.$black;
+                }
 
                 .card-title {
                     font-family: "Roboto-bold";
