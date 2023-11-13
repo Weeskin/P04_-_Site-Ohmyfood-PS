@@ -2,7 +2,7 @@
 @use "_variables";
 @use "_mixins";
 @use "_keyframes";
-
+@use "_animations";
 
 /** Général **/
 * {
@@ -372,29 +372,7 @@ header {
                 }
 
                 /** Animation du coeur **/
-                .card-heart {
-
-                    i {
-                        position: absolute;
-                        font-size: 20px;
-                        margin: 30px 10px 8px 0;
-                        right: 10%;
-                    }
-
-                    .fa-solid {
-                        opacity: 0;
-
-                        &:hover {
-                            opacity: 1;
-                            color: transparent;
-                            background-clip: text;
-                            --webkit-background-clip: text;
-                            transition: all 0.4s ease-in-out;
-                            background-image: variables.$button-background;
-                            overflow: hidden;
-                        }
-                    }
-                }
+                @include animations.card-heart-animation;
             }
         }
     }

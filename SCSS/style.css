@@ -35,7 +35,8 @@
   src: url("../assets/fonts/fontawesome/webfonts/fa-solid-400.ttf") format("truetype"), url("../assets/fonts/fontawesome/webfonts/fa-solid-400.woff2") format("woff2");
 }
 /**  Variables  **/
-/*** mixin ***/
+/**  Mixins  **/
+/**  Keyframes  **/
 @keyframes menu-content {
   from {
     opacity: 0;
@@ -77,6 +78,9 @@
     top: 0%;
   }
 }
+/**  Animations  **/
+/** Animation du coeur **/
+/** Animations entrées - plats - desserts  **/
 /** Général **/
 * {
   list-style: none;

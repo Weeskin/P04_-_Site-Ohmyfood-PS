@@ -2,6 +2,7 @@
 @use "_fonts";
 @use "_mixins";
 @use "_keyframes";
+@use "_animations";
 
 /**    Général    **/
 
@@ -122,7 +123,6 @@ main {
             margin-bottom: 24px;
             display: flex;
             align-items: center;
-
 
             @media screen and (min-width:1440px) {
                 display: flex;
@@ -266,108 +266,107 @@ main {
         }
     }
 
-}
+    /** Animations entrées - plats - desserts  **/
 
-/** Animations entrées - plats - desserts  **/
-
-.starter {
-    animation: 1000ms ease-in-out 0.40s 1 normal backwards running menu-content;
-}
-
-.dish {
-    animation: 1000ms ease-in-out 0.85s 1 normal backwards running menu-content;
-}
-
-.dessert {
-    animation: 1000ms ease-in-out 1.15s 1 normal backwards running menu-content;
-}
-
-.anim_button {
-    animation: 1000ms ease-in-out 1.30s 1 normal backwards running menu-content;
-}
-
-/** Footer **/
-
-footer {
-    display: flex;
-    flex-direction: column;
-    background-color: variables.$black-grey;
-    color: variables.$white;
-    padding: 22px 25px 22px 25px;
-    margin-top: 60px;
-
-    @media screen and (min-width:767px) {
-        flex-direction: row-reverse;
-        align-items: flex-end;
-        padding: 25px 30px 25px 30px;
-        margin-top: 30px;
+    .starter {
+        @include animations.starter;
     }
 
-    h3 {
-        color: variables.$white;
-        font-family: "Shrikhand", cursive;
-        font-size: 18px;
-        margin: 0;
-
-        @media screen and (min-width:767px) {
-            margin-left: 16px;
-        }
+    .dish {
+        @include animations.dish;
     }
 
-    ul {
+    .dessert {
+        @include animations.dessert;
+    }
+
+    .anim_button {
+        @include animations.anim_button;
+    }
+
+    /** Footer **/
+
+    footer {
         display: flex;
         flex-direction: column;
-        font-family: "Roboto-light";
-        gap: 8px;
+        background-color: variables.$black-grey;
+        color: variables.$white;
+        padding: 22px 25px 22px 25px;
+        margin-top: 60px;
 
         @media screen and (min-width:767px) {
-            flex-direction: row;
-            justify-content: flex-end;
-            width: 100%;
-            margin: 30px 0 0 0;
+            flex-direction: row-reverse;
+            align-items: flex-end;
+            padding: 25px 30px 25px 30px;
+            margin-top: 30px;
         }
 
-        li {
-            list-style-type: none;
+        h3 {
+            color: variables.$white;
+            font-family: "Shrikhand", cursive;
+            font-size: 18px;
+            margin: 0;
 
             @media screen and (min-width:767px) {
-                min-width: 11%;
-            }
-
-            a {
-                text-decoration: none;
-                color: variables.$white;
-            }
-        }
-
-        .ico-tools {
-            font-family: "Roboto";
-
-            @media screen and (min-width:767px) {
-                min-width: 16%;
-
-            }
-
-            &::before {
-                content: "\f2e7";
-                font-family: "Font-Solid";
-                padding-right: 10px;
-                font-size: 15px;
+                margin-left: 16px;
             }
         }
 
-        .ico-handshake-angle {
-            font-family: "Roboto";
+        ul {
+            display: flex;
+            flex-direction: column;
+            font-family: "Roboto-light";
+            gap: 8px;
 
             @media screen and (min-width:767px) {
-                min-width: 16%;
+                flex-direction: row;
+                justify-content: flex-end;
+                width: 100%;
+                margin: 30px 0 0 0;
             }
 
-            &::before {
-                font-family: "Font-Solid";
-                content: "\f4c4";
-                padding-right: 10px;
-                font-size: 15px;
+            li {
+                list-style-type: none;
+
+                @media screen and (min-width:767px) {
+                    min-width: 11%;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: variables.$white;
+                }
+            }
+
+            .ico-tools {
+                font-family: "Roboto";
+
+                @media screen and (min-width:767px) {
+                    min-width: 16%;
+
+                }
+
+                &::before {
+                    content: "\f2e7";
+                    font-family: "Font-Solid";
+                    padding-right: 10px;
+                    font-size: 15px;
+                }
+            }
+
+            .ico-handshake-angle {
+                font-family: "Roboto";
+
+                @media screen and (min-width:767px) {
+                    min-width: 16%;
+                }
+
+                &::before {
+                    font-family: "Font-Solid";
+                    content: "\f4c4";
+                    padding-right: 10px;
+                    font-size: 15px;
+                }
             }
         }
     }
