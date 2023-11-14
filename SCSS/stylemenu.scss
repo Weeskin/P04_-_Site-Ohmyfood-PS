@@ -2,7 +2,6 @@
 @use "_fonts";
 @use "_mixins";
 @use "_keyframes";
-@use "_animations";
 
 /**    Général    **/
 
@@ -269,19 +268,19 @@ main {
     /** Animations entrées - plats - desserts  **/
 
     .starter {
-        @include animations.starter;
+        @include mixins.starter;
     }
 
     .dish {
-        @include animations.dish;
+        @include mixins.dish;
     }
 
     .dessert {
-        @include animations.dessert;
+        @include mixins.dessert;
     }
 
     .anim_button {
-        @include animations.anim_button;
+        @include mixins.anim_button;
     }
 
     /** Footer **/

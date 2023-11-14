@@ -1,4 +1,6 @@
-/**  Mixins  **/
+@use "_variables";
+
+// Animation boutons
 
 @mixin btn-main {
     border-radius: 25px;
@@ -22,4 +24,123 @@
     background-color: white;
     border-radius: 15px 15px 15px 15px;
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.10);
+}
+
+
+// Animations entrées - plats - desserts
+
+@mixin starter {
+    animation: 1000ms ease-in-out 0.40s 1 normal backwards running menu-content;
+}
+
+@mixin dish {
+    animation: 1000ms ease-in-out 0.85s 1 normal backwards running menu-content;
+}
+
+@mixin dessert {
+    animation: 1000ms ease-in-out 1.15s 1 normal backwards running menu-content;
+}
+
+@mixin anim_button {
+    animation: 1000ms ease-in-out 1.30s 1 normal backwards running menu-content;
+}
+
+// Animation du coeur 
+
+@mixin card-heart-animation {
+    .card-heart {
+        i {
+            position: absolute;
+            font-size: 20px;
+            margin: 30px 10px 8px 0;
+            right: 10%;
+        }
+
+        .fa-solid {
+            opacity: 0;
+
+            &:hover {
+                opacity: 1;
+                color: transparent;
+                background-clip: text;
+                --webkit-background-clip: text;
+                transition: all 0.4s ease-in-out;
+                background-image: variables.$button-background;
+                overflow: hidden;
+            }
+        }
+    }
+}
+
+/** Loader **/
+@mixin loader {
+    .loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        background-color: variables.$white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: fadeout 2700ms forwards;
+
+        .wrapper {
+            width: 400px;
+            height: 120px;
+            position: relative;
+            z-index: 3;
+
+            .circle {
+                width: 50px;
+                height: 50px;
+                position: absolute;
+                border-radius: 50%;
+                background-color: variables.$first-color;
+                left: 15%;
+                transform-origin: 50%;
+                animation: circle_loader .5s alternate infinite ease;
+            }
+
+            .circle:nth-child(2) {
+                background-color: variables.$second-color;
+                left: 45%;
+                animation-delay: .2s;
+            }
+
+            .circle:nth-child(3) {
+                background-color: variables.$green-light;
+                left: auto;
+                right: 15%;
+                animation-delay: .3s;
+            }
+
+            .shadow {
+                width: 50px;
+                height: 8px;
+                border-radius: 50%;
+                background-color: rgba(0, 0, 0, 0.9);
+                position: absolute;
+                top: 62px;
+                transform-origin: 50%;
+                z-index: -1;
+                left: 15%;
+                filter: blur(3px);
+                animation: shadow_loader .5s alternate infinite ease;
+            }
+
+            .shadow:nth-child(4) {
+                left: 45%;
+                animation-delay: .2s
+            }
+
+            .shadow:nth-child(5) {
+                left: auto;
+                right: 15%;
+                animation-delay: .3s;
+            }
+        }
+    }
 }
