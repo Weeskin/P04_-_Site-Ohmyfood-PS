@@ -35,7 +35,6 @@
   font-family: "Font-Regular";
   src: url("../assets/fonts/fontawesome/webfonts/fa-solid-400.ttf") format("truetype"), url("../assets/fonts/fontawesome/webfonts/fa-solid-400.woff2") format("woff2");
 }
-/**  Mixins  **/
 /**  Keyframes  **/
 @keyframes menu-content {
   from {
@@ -78,9 +77,6 @@
     top: 0%;
   }
 }
-/**  Animations  **/
-/** Animation du coeur **/
-/** Animations entrées - plats - desserts  **/
 /**    Général    **/
 * {
   list-style: none;
@@ -164,7 +160,6 @@ header .logo img {
 /** Section menu **/
 main {
   /** Animations entrées - plats - desserts  **/
-  /** Footer **/
 }
 main .menu-image {
   width: 100%;
@@ -350,7 +345,9 @@ main .dessert {
 main .anim_button {
   animation: 1000ms ease-in-out 1.3s 1 normal backwards running menu-content;
 }
-main footer {
+
+/** Footer **/
+footer {
   display: flex;
   flex-direction: column;
   background-color: #353535;
@@ -359,73 +356,73 @@ main footer {
   margin-top: 60px;
 }
 @media screen and (min-width: 767px) {
-  main footer {
+  footer {
     flex-direction: row-reverse;
     align-items: flex-end;
     padding: 25px 30px 25px 30px;
     margin-top: 30px;
   }
 }
-main footer h3 {
+footer h3 {
   color: #FFF;
   font-family: "Shrikhand", cursive;
   font-size: 18px;
   margin: 0;
 }
 @media screen and (min-width: 767px) {
-  main footer h3 {
+  footer h3 {
     margin-left: 16px;
   }
 }
-main footer ul {
+footer ul {
   display: flex;
   flex-direction: column;
   font-family: "Roboto-light";
   gap: 8px;
 }
 @media screen and (min-width: 767px) {
-  main footer ul {
+  footer ul {
     flex-direction: row;
     justify-content: flex-end;
     width: 100%;
     margin: 30px 0 0 0;
   }
 }
-main footer ul li {
+footer ul li {
   list-style-type: none;
 }
 @media screen and (min-width: 767px) {
-  main footer ul li {
+  footer ul li {
     min-width: 11%;
   }
 }
-main footer ul li a {
+footer ul li a {
   text-decoration: none;
   color: #FFF;
 }
-main footer ul .ico-tools {
+footer ul .ico-tools {
   font-family: "Roboto";
 }
 @media screen and (min-width: 767px) {
-  main footer ul .ico-tools {
+  footer ul .ico-tools {
     min-width: 16%;
   }
 }
-main footer ul .ico-tools::before {
+footer ul .ico-tools::before {
   content: "\f2e7";
   font-family: "Font-Solid";
   padding-right: 10px;
   font-size: 15px;
 }
-main footer ul .ico-handshake-angle {
+footer ul .ico-handshake-angle {
   font-family: "Roboto";
 }
 @media screen and (min-width: 767px) {
-  main footer ul .ico-handshake-angle {
+  footer ul .ico-handshake-angle {
     min-width: 16%;
   }
 }
-main footer ul .ico-handshake-angle::before {
+footer ul .ico-handshake-angle::before {
   font-family: "Font-Solid";
   content: "\f4c4";
   padding-right: 10px;
