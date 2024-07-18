@@ -1,0 +1,41 @@
+/** FONTS Shrikhand **/
+@font-face {
+    src: url("../assets/fonts/Shrikhand/Shrikhand-Regular.ttf") format('truetype');
+    font-family: "Shrikhand";
+}
+
+/** FONTS Roboto **/
+@font-face {
+    src: url("../assets/fonts/Roboto/Roboto-Medium.ttf") format("truetype");
+    font-family: "Roboto";
+    font-weight: 500;
+}
+
+@font-face {
+    src: url("../assets/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+    font-family: "Roboto-bold";
+    font-weight: 700;
+}
+
+@font-face {
+    src: url("../assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+    font-family: "Roboto-regular";
+    font-weight: 400;
+}
+
+@font-face {
+    src: url("../assets/fonts/Roboto/Roboto-Light.ttf") format("truetype");
+    font-family: "Roboto-light";
+    font-weight: 300;
+}
+
+/** FontAwesome **/
+@font-face {
+    font-family: "Font-Solid";
+    src: url("../assets/fonts/fontawesome/webfonts/fa-solid-900.ttf")format("truetype"), url("../assets/fonts/fontawesome/webfonts/fa-solid-900.woff2")format("woff2");
+}
+
+@font-face {
+    font-family: "Font-Regular";
+    src: url("../assets/fonts/fontawesome/webfonts/fa-solid-400.ttf")format("truetype"), url("../assets/fonts/fontawesome/webfonts/fa-solid-400.woff2")format("woff2");
+}
